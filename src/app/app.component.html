@@ -18,6 +18,10 @@
     <label for="age">Age</label>
     <input id="age">
   </div>
+
+  <label for="info">Animation test</label>
+  <input id="info" type="checkbox" (change)="info = !info">
+  <p [@fade] *ngIf="info">Testando animação fade</p>
   
   <div class="button-group">
     <button class="button button-primary" type="button">Submit</button>
