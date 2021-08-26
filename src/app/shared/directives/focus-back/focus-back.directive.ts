@@ -1,20 +1,19 @@
-import { Directive, OnDestroy, OnInit } from "@angular/core";
+import { Directive, OnDestroy, OnInit } from '@angular/core';
 
-@Directive({ 
+@Directive({
   selector: '[appFocusBack]'
 })
 export class FocusBackDirective implements OnInit, OnDestroy {
-  
+
   private lastFocusedElement: Element;
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
     this.lastFocusedElement = document.activeElement;
   }
 
-  ngOnDestroy(): void {
-    if(this.lastFocusedElement){
+  public ngOnDestroy(): void {
+    if (this.lastFocusedElement) {
       (this.lastFocusedElement as HTMLElement).focus();
     }
   }
-
 }
